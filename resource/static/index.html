@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="main.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <title>dxFoil WEB</title>
+    </head>
+    <body>
+    	<div class="top" id="instruction">
+        <h1>dxFoil</h1>
+        <p>The dxFoil is a tool to create a foam core template for hot wire cutting.<br />
+    	Output file is a DXF format. Edit them with your favorit CAD.
+        </p><br />
+        
+        <p>Dxfoilはラジコンの主翼などのフォームコアを熱戦カットするときのテンプレートの元を作るためのツールです。<br />
+        	翼型データのDATファイルをアップロードしたり指定して、各種パラメータをしていすると、
+        	DXF形式で作られます。適当なCADファイルで開いて好みの形に仕上げて使ってください。</p>
+        <br /><br />
+        </div>
+        
+        <div class="top" id="inputform">
+        	<div class="left" id="maininput">
+        		<form action="PUT" name="templatedata">
+        			<table>
+        				<tr>
+        					<th colspan="2">General</th>
+        				</tr>
+        				<tr>
+        					<td>Airfoil DAT file</td>
+        					<td><input type="file" name="AirfoilDat" /></td>
+        				</tr>
+        				<tr>
+        					<td>Chord</td>
+        					<td><input type="number" name="Chord"/></td>
+        				</tr>
+        				<tr>
+        					<th colspan="2">Leading Edge Side</th>
+        				</tr>
+        				<tr>
+        					<td>Stage Length</td>
+        					<td><input type="number" name="FS" value="30"/></td>
+        				</tr>
+        				<tr>
+        					<td>Stage Height</td>
+        					<td><input type="number" name="LHt" value="15" /></td>
+        				</tr>
+        				<tr>
+        					<td></td>
+        				</tr>
+        			</table>
+        			
+        		</form>
+        	</div>
+        </div>
+    </body>
+</html>
