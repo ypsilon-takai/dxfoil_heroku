@@ -1,4 +1,4 @@
-(ns dxfoil_heroku.core
+(ns dxfoil-heroku.core
   (:use [compojure.core :only [defroutes GET POST]])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
