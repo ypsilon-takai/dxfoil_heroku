@@ -10,7 +10,7 @@
   (with-open [rdr (io/reader datfile-name)]
     (reduce (fn [foil-data line]
               (let [blank (re-matches #"^\s*$" line)
-                    [_ x y :as datline] (re-matches #"^ *(\d+\.\d+) +(\d+\.\d+) *$" line)]
+                    [_ x y :as datline] (re-matches #"^\s*(-?\d+\.\d+)\s+(-?\d+\.\d+) *$" line)]
                 (cond blank
                       ,,foil-data
                       datline
@@ -21,7 +21,7 @@
             (line-seq rdr))))
 
 
-(defn- slice-into-two 
+(defn- slice-into-two
   "Take hall foil data and slice it into upper surface and lower
   surface datas."
   [foil-data]
@@ -37,11 +37,12 @@
           {:prev 1 :top [] :bottom nil}
           foil-data))
 
+
 ;; D:/userdata/q3197c/Desktop/testfoil.dat
 
 (defn read-airfoil-data
   "Read airfoil dat file and returns map which includes:
-   - Airfoil information if provided
+   - Airfoil information if provided as :airfoilinfo
    - Hole airfoil points data as :points
    - Upper surface points data as :upper
    - Lowre surface points data as :lower"
@@ -55,5 +56,5 @@
 
 (defn write-airfoil-data
   "Not created yet. May be write proper dat data."
-  [{:keys [:airfoilinfo :points]}]
+  [{:keys [airfoilinfo points]}]
   nil)
