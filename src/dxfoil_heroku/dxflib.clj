@@ -34,7 +34,7 @@
    :flag 64
    })
 
-(defn Drawing []
+(defn Drawing [comment-strings]
   {
    :kind :drawing
    :insbase [0.0,0.0,0.0]
@@ -46,6 +46,7 @@
    :blocks []
    :views []
    :entities []
+   :comments comment-strings
    })
 
 (defn Entity []
@@ -227,6 +228,10 @@
     "1" "AC1006"
   ])
 )
+
+(defn comments [comment-strings]
+  (join (nextline)
+        (mapcat #(vector %1 %2) (repeat "999") comment-strings)))
 
 (defn point
   ([x] (point x 0))
